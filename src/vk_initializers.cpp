@@ -180,11 +180,11 @@ VkRenderingInfo vkinit::rendering_info(VkExtent2D renderExtent, VkRenderingAttac
 VkImageSubresourceRange vkinit::image_subresource_range(VkImageAspectFlags aspectMask)
 {
     VkImageSubresourceRange subImage {};
-    subImage.aspectMask = aspectMask;
-    subImage.baseMipLevel = 0;
-    subImage.levelCount = VK_REMAINING_MIP_LEVELS;
-    subImage.baseArrayLayer = 0;
-    subImage.layerCount = VK_REMAINING_ARRAY_LAYERS;
+    subImage.aspectMask = aspectMask;//图像平面类型（颜色/深度/模板等）
+    subImage.baseMipLevel = 0;//起始Mipmap层级
+    subImage.levelCount = VK_REMAINING_MIP_LEVELS;//影响的Mip层级数量
+    subImage.baseArrayLayer = 0;//起始数组层
+    subImage.layerCount = VK_REMAINING_ARRAY_LAYERS;//影响的数组层数量
 
     return subImage;
 }
